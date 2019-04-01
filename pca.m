@@ -26,4 +26,13 @@ function pcs = pca()
         end
     end
     pcs = V(:, I(1:index));
+    
+    for i = 1:11
+        max_val = max(pcs(:, i));
+        min_val = min(pcs(:, i));
+        diff = max_val - min_val;
+        img = uint8((pcs(:, i) - min_val) * 255 / diff);
+        subplot(4, 4, i), imshow(reshape(img, 32, 32));
+        %subplot(4, 4, i), imshow(reshape(uint8(pcs(:, i) + mean_value), 32, 32));
+    end
 end
