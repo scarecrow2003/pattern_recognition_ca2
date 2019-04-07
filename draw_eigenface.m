@@ -7,10 +7,12 @@ function draw_eigenface(eigen_values, eigen_vectors)
             break;
         end
     end
+    % draw max 25 eigen faces
+    eigen_count = min(eigen_count, 25);
     eigen_faces = eigen_vectors(:, 1:eigen_count);
-    rows = ceil(eigen_count / 4);
+    rows = ceil(eigen_count / 5);
     figure();
     for i = 1:eigen_count
-        subplot(4, rows, i), imshow(reshape(eigen_faces(:, i), 32, 32), []);
+        subplot(rows, 5, i), imshow(reshape(eigen_faces(:, i), 32, 32), []);
     end
 end
