@@ -15,13 +15,13 @@ function w = lda()
     test_images_2 = test_images' * w(:, 1:2);
     [test_acc, self_acc] = nearest_neighbor(train_images_2, train_label, test_images_2, test_label);
     display(strcat('PIE test data accuracy is:', num2str(test_acc), '. Self photo accuracy is:', num2str(self_acc)));
-    % reduce dimensionality to 80 and do classification using nearest
+    % reduce dimensionality to 3 and do classification using nearest
     % neighbor
     train_images_3 = train_images' * w(:, 1:3);
     test_images_3 = test_images' * w(:, 1:3);
     [test_acc, self_acc] = nearest_neighbor(train_images_3, train_label, test_images_3, test_label);
     display(strcat('PIE test data accuracy is:', num2str(test_acc), '. Self photo accuracy is:', num2str(self_acc)));
-    % reduce dimensionality to 200 and do classification using nearest
+    % reduce dimensionality to 9 and do classification using nearest
     % neighbor
     train_images_9 = train_images' * w(:, 1:9);
     test_images_9 = test_images' * w(:, 1:9);

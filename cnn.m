@@ -14,6 +14,11 @@ function accuracy = cnn()
         maxPooling2dLayer(2, 'Stride', 2)
         batchNormalizationLayer
         reluLayer
+        
+        convolution2dLayer(5, 50, 'Padding', 'same')
+        maxPooling2dLayer(2, 'Stride', 2)
+        batchNormalizationLayer
+        reluLayer
 
         fullyConnectedLayer(21)
         reluLayer
